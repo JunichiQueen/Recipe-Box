@@ -30,12 +30,9 @@ export default class NavigationBar extends React.Component {
                     <NavbarBrand href="/">Recipe Box</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
+                        <Nav className="ml-auto" navbar>                           
                             <NavItem>
-                                <NavLink href="/register/">Register</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="Login">Login</NavLink>
+                                <NavLink href="/Create">Create</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>

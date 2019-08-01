@@ -34,19 +34,12 @@ class App extends Component {
       <div>
         <Navbar />
         <Router>
-      
-          <Link to="/">Home</Link>
-          <br></br>
-          <Link to="/create">Create</Link>
-          <br></br>
-          
-
-      
+        
           <Route path="/" render={(props) => <RecipeBox getAll={this.getAllRecipes} data={this.state.data}/>}/>
 
           <Route path="/create" render={(props) => <Create getAll={this.getAllRecipes}/>}/>
           {this.state.data.map((item) => (
-            <Route path={"/"+ item.name} render={(props) => <Details name={item.name} description={item.description} ingredients={item.ingredients}/>}/>
+            <Route path={"/"+ item.name} render={(props) => <Details getAll={this.getAllRecipes} name={item.name} description={item.description} ingredients={item.ingredients} _id={item._id} image={item.image}/>}/>
           ))}
           
         </Router>
