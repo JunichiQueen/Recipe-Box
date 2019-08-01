@@ -37,7 +37,7 @@ class App extends Component {
         
           <Route path="/" render={(props) => <RecipeBox getAll={this.getAllRecipes} data={this.state.data}/>}/>
 
-          <Route path="/create" render={(props) => <Create getAll={this.getAllRecipes}/>}/>
+          <Route path="/create" render={(props) => <Create getAll={this.getAllRecipes} title="A Title"/>}/>
           {this.state.data.map((item) => (
             <Route path={"/"+ item.name} render={(props) => <Details getAll={this.getAllRecipes} name={item.name} description={item.description} ingredients={item.ingredients} _id={item._id} image={item.image}/>}/>
           ))}

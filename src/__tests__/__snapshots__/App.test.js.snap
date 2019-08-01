@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render a prop 1`] = `ShallowWrapper {}`;
+
+exports[`snapshot app 1`] = `
+<div>
+  <div>
+    <nav
+      className="navbar navbar-expand-md navbar-dark bg-dark"
+    >
+      <a
+        className="navbar-brand"
+        href="/"
+      >
+        Recipe Box
+      </a>
+      <button
+        className="navbar-toggler"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse"
+        style={Object {}}
+      >
+        <ul
+          className="ml-auto navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              href="/Create"
+              onClick={[Function]}
+            >
+              Create
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div
+    className="text-center"
+  >
+    <h2>
+      Recipes
+    </h2>
+    <table
+      className="table"
+    >
+      <tbody />
+    </table>
+  </div>
+</div>
+`;

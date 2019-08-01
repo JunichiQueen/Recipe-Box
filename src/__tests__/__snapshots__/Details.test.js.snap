@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot Details 1`] = `
+<div>
+  <p />
+  <p />
+  <p />
+  <img />
+  <button
+    aria-label={null}
+    className="btn btn-outline-danger"
+    onClick={[Function]}
+    type="button"
+  >
+    Delete Recipe
+  </button>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <p>
+        RecipeName
+      </p>
+      <input />
+      <p>
+        Description
+      </p>
+      <input />
+      <p>
+        Ingredients
+      </p>
+      <input />
+      <p>
+        Image
+      </p>
+      <input />
+      <button
+        aria-label={null}
+        className="btn btn-outline-warning"
+        onClick={[Function]}
+        type="submit"
+      >
+        Update Recipe
+      </button>
+    </form>
+  </div>
+</div>
+`;
