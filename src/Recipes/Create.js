@@ -5,11 +5,11 @@ class Create extends Component{
     createRecipe = (e) => {
         e.preventDefault();
         let newRecipe = {
-            recipename: e.target.value[0],
-            description: e.target.value[1],
-            ingredients: e.target.value[2]
+            name: e.target[0].value,
+            description: e.target[1].value,
+            ingredients: e.target[2].value
         }
-        axios.post('URL', newRecipe).then(response => {
+        axios.post('http://localhost:5000/recipe/createRecipe', newRecipe).then(response => {
             this.props.getAll();
         }).catch(err => console.log(err));
     }

@@ -6,25 +6,25 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import RecipeBox from './Recipes/RecipeBox.js';
 import Create from './Recipes/Create.js';
 import Navbar from './Recipes/Navbar.js';
+import Details from './Recipes/Details.js';
 
 class App extends Component {
   constructor(){
     super();
     this.state={
-      recipename: "",
-      description: "",
-      ingredients: ""
+      data: []
     }
   }
   getAllRecipes = () => {
     axios
-    .get('URL').then(response => {
+    .get('http://localhost:5000/recipe/all').then(response => {
       this.setState({
-        recipename: response.recipename,
-        description: response.description,
-        ingredients: response.ingredients
+        data: response.data
       })
     })
+  }
+  componentDidMount = () => {
+    this.getAllRecipes();
   }
 
 
@@ -42,11 +42,14 @@ class App extends Component {
           
 
       
-          <Route path="/" component={RecipeBox}/>
+          <Route path="/" render={(props) => <RecipeBox getAll={this.getAllRecipes} data={this.state.data}/>}/>
 
           <Route path="/create" render={(props) => <Create getAll={this.getAllRecipes}/>}/>
-  
-        </Router> 
+          {this.state.data.map((item) => (
+            <Route path={"/"+ item.name} render={(props) => <Details name={item.name} description={item.description} ingredients={item.ingredients}/>}/>
+          ))}
+          
+        </Router>
 
       </div>
     )
